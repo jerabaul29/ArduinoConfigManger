@@ -36,8 +36,8 @@ public:
   // get ready to start outputting the configuration char representation
   void get_ready_output_char_representation(void);
 
-  // how many more char in the configuration char representation
-  int remaining_output_char(void);
+  // if there are still remaining chars to be flush in the output
+  bool remaining_output_char(void);
 
   // out next char; for building the string representation from the configuration state
   char next_output_char(void);

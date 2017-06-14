@@ -81,8 +81,8 @@ void CONFIG_MANAGER::get_ready_output_char_representation(void){
   // do nothing
 };
 
-int CONFIG_MANAGER::remaining_output_char(void){
-  return(-1);
+bool CONFIG_MANAGER::remaining_output_char(void){
+  return(true);
 };
 
 char CONFIG_MANAGER::next_output_char(void){
