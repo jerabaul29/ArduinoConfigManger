@@ -1,9 +1,7 @@
 #ifndef CONFIG_MANAGER_h
 #define CONFIG_MANAGER_h
 
-#ifndef USE_CONFIG_MANAGER_EXAMPLES
-  #define USE_CONFIG_MANAGER_EXAMPLES true
-#endif
+#define USE_CONFIG_MANAGER_EXAMPLES true
 
 #include <WString.h>
 
@@ -64,7 +62,6 @@ public:
     // two functions to get and set from String
     String getS_nbr_index(void);
     void setS_nbr_index(String);
-
 
   #endif
 

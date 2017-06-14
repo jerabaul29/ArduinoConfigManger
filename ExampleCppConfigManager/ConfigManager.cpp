@@ -65,8 +65,8 @@ int CONFIG_MANAGER::update_field(String crrt_name, String crrt_value){
     // just an example: for the variable defined as ("nbr_index", "int", 0)
 
     // just an example
-    if (settingName == 'nbr_index'){
-      nbr_index = settingValue.toInt();
+    if (crrt_name == 'nbr_index'){
+      CONFIG_MANAGER::setS_nbr_index(crrt_value);
     }
 
   #endif
@@ -78,7 +78,7 @@ int CONFIG_MANAGER::update_field(String crrt_name, String crrt_value){
 ////////////////////////////////////////////////////////////////////////////////
 
 void CONFIG_MANAGER::get_ready_output_char_representation(void){
-  // INCLUDE_number_remaining_parameters
+  // INCLUDE_GET_READY_OUTPUT_CHAR_REPR
 
   #if USE_CONFIG_MANAGER_EXAMPLES
     number_remaining_parameters = 1;
@@ -127,7 +127,7 @@ char CONFIG_MANAGER::next_output_char(void){
 };
 
 void CONFIG_MANAGER::get_output_line_ready(void){
-  // INCLUDE_get_output_line_ready_CPP
+  // INCLUDE_GET_OUTPUT_LINE
 
   #if USE_CONFIG_MANAGER_EXAMPLES
 
@@ -135,7 +135,7 @@ void CONFIG_MANAGER::get_output_line_ready(void){
 
     // just an example
     if (number_remaining_parameters == 1){
-      output_string = String("[") + String("nbr_index") + String("=") + String(nbr_index) + String("]");
+      output_string = String("[") + String("nbr_index") + String("=") + CONFIG_MANAGER::getS_nbr_index() + String("]");
       crrt_length_output_string = output_string.length();
       crrt_index_output_string = 0;
     }
@@ -151,7 +151,7 @@ void CONFIG_MANAGER::get_output_line_ready(void){
 // all are CUSTOM GENERATED ////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-// INCLUDE_GET_SET_FUNCTIONS_CPP
+// INCLUDE_GET_SET_FUNCTIONS
 
 #if USE_CONFIG_MANAGER_EXAMPLES
 

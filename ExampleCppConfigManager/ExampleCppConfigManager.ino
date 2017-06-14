@@ -24,7 +24,7 @@ void setup(){
 
   Serial.println(F("\nDone reading; internal state: \n"));
 
-  Serial.println(F("nbr_int: "));
+  Serial.println(F("nbr_index: "));
   Serial.print(CONFIG_MANAGER_inst.get_nbr_index());
   Serial.println();
 
