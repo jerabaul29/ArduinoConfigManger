@@ -70,6 +70,9 @@ public:
 
 private:
 
+  // get one more output line ready for the parser
+  void get_output_line_ready(void);
+
   // -------------------------------------------------------------------------
   // GENERIC VARIABLES -------------------------------------------------------
   // -------------------------------------------------------------------------
@@ -82,7 +85,11 @@ private:
   int state_parser;
 
   // for the output
-  int number_remaining_output_char;
+  int number_remaining_parameters;
+  int crrt_length_output_string;
+  int crrt_index_output_string;
+  String output_string;
+  bool flag_ready_output = false;
 
   // -------------------------------------------------------------------------
   // CUSTOM GENERATED VARIABLES ----------------------------------------------

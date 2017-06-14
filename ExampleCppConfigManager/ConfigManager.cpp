@@ -2,7 +2,7 @@
 
 CONFIG_MANAGER::CONFIG_MANAGER(void){
   // initialize
-  number_remaining_output_char = -1;
+  number_remaining_parameters = -1;
   CONFIG_MANAGER::reset_input_parsing();
 }
 
@@ -78,16 +78,72 @@ int CONFIG_MANAGER::update_field(String crrt_name, String crrt_value){
 ////////////////////////////////////////////////////////////////////////////////
 
 void CONFIG_MANAGER::get_ready_output_char_representation(void){
-  // do nothing
-};
+  // INCLUDE_number_remaining_parameters
+
+  #if USE_CONFIG_MANAGER_EXAMPLES
+    number_remaining_parameters = 1;
+  #endif
+
+  crrt_index_output_string = -1;
+
+  CONFIG_MANAGER::get_output_line_ready();
+}
 
 bool CONFIG_MANAGER::remaining_output_char(void){
-  return(true);
-};
+  if (!flag_ready_output){
+    CONFIG_MANAGER::get_ready_output_char_representation();
+    flag_ready_output = true;
+  }
+
+  if (crrt_length_output_string - crrt_index_output_string > 0){
+    return(true);
+  }
+
+  if (number_remaining_parameters > 0){
+    return(true);
+  }
+
+  return(false);
+}
 
 char CONFIG_MANAGER::next_output_char(void){
-  return('x');
+  if (!flag_ready_output){
+    CONFIG_MANAGER::get_ready_output_char_representation();
+    flag_ready_output = true;
+  }
+
+  if (crrt_length_output_string - crrt_index_output_string > 0){
+    crrt_index_output_string += 1;
+    return(output_string[crrt_index_output_string - 1]);
+  }
+
+  if (number_remaining_parameters > 0){
+    CONFIG_MANAGER::get_output_line_ready();
+    CONFIG_MANAGER::next_output_char();
+  }
+
+  return('\n');
+
 };
+
+void CONFIG_MANAGER::get_output_line_ready(void){
+  // INCLUDE_get_output_line_ready_CPP
+
+  #if USE_CONFIG_MANAGER_EXAMPLES
+
+    // just an example: for the variable defined as ("nbr_index", "int", 0)
+
+    // just an example
+    if (number_remaining_parameters == 1){
+      output_string = String("[") + String("nbr_index") + String("=") + String(nbr_index) + String("]");
+      crrt_length_output_string = output_string.length();
+      crrt_index_output_string = 0;
+    }
+
+  #endif
+
+  number_remaining_parameters -= 1;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // functions for get / set field ///////////////////////////////////////////////
