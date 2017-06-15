@@ -59,12 +59,12 @@ def generate_INCLUDE_CONFIG_VARIABLES_H(config_param_inst):
 def generate_INCLUDE_UPDATE_FIELD(config_param_inst):
     """Generate on the model:
 
-    if (crrt_name == 'nbr_index'){
+    if (crrt_name == "nbr_index"){
       CONFIG_MANAGER::setS_nbr_index(crrt_value);
     }
     """
 
-    str_out = "if (crrt_name == '" + config_param_inst.var_name + "'){\nCONFIG_MANAGER::setS_" + config_param_inst.var_name + "(crrt_value);\n}\n"
+    str_out = 'if (crrt_name == "' + config_param_inst.var_name + '"){\nCONFIG_MANAGER::setS_' + config_param_inst.var_name + "(crrt_value);\n}\n"
     return(str_out)
 
 
@@ -90,7 +90,7 @@ def generate_INCLUDE_GET_OUTPUT_LINE(config_param_inst, index_current_parameter)
     line_1 = "if (number_remaining_parameters == " + str(index_current_parameter) + "){\n"
     line_2 = '  output_string = String("[") + String("' + config_param_inst.var_name + '") + String("=") + CONFIG_MANAGER::getS_' + config_param_inst.var_name + '() + String("]");\n'
     line_3 = "  crrt_length_output_string = output_string.length();\n"
-    line_4 = "  crrt_index_output_string = " + str(index_current_parameter - 1) + ";\n}\n"
+    line_4 = "  crrt_index_output_string = 0;\n}\n"
 
     return(line_1 + line_2 + line_3 + line_4)
 
@@ -133,7 +133,7 @@ def generate_INCLUDE_GET_SET_FUNCTIONS(config_param_inst):
     def_3 = "String CONFIG_MANAGER::getS_" + config_param_inst.var_name + "(){\n" + "return(String(" + config_param_inst.var_name + "));\n}\n"
 
     if config_param_inst.type == 'int':
-        def_4 = "void CONFIG_MANAGER::setS_" + config_param_inst.var_name + "(String string_in){\n" + config_param_inst.var_name + " = string_in.ToInt();\n}\n"
+        def_4 = "void CONFIG_MANAGER::setS_" + config_param_inst.var_name + "(String string_in){\n" + config_param_inst.var_name + " = string_in.toInt();\n}\n"
 
     elif config_param_inst.type == 'String':
         def_4 = "void CONFIG_MANAGER::setS_" + config_param_inst.var_name + "(String string_in){\n" + config_param_inst.var_name + " = string_in;\n}\n"
@@ -215,7 +215,7 @@ def generate_Cpp_code(list_config_params):
     inplace_change(filename_cpp, old_string, new_string)
 
 example_config_param_inst1 = config_param(var_name="test_var1", type="String", init='"xx"')
-example_config_param_inst2 = config_param(var_name="test_var2", type="int", init='3')
+example_config_param_inst2 = config_param(var_name="test_var2", type="int", init="3")
 list_config_params = [example_config_param_inst1, example_config_param_inst2]
 
 generate_Cpp_code(list_config_params)

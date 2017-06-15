@@ -65,7 +65,7 @@ int CONFIG_MANAGER::update_field(String crrt_name, String crrt_value){
     // just an example: for the variable defined as ("nbr_index", "int", 0)
 
     // just an example
-    if (crrt_name == 'nbr_index'){
+    if (crrt_name == "nbr_index"){
       CONFIG_MANAGER::setS_nbr_index(crrt_value);
     }
 
@@ -119,7 +119,6 @@ char CONFIG_MANAGER::next_output_char(void){
 
   if (number_remaining_parameters > 0){
     CONFIG_MANAGER::get_output_line_ready();
-    CONFIG_MANAGER::next_output_char();
   }
 
   return('\n');
