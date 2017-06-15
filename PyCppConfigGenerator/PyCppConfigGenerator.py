@@ -201,7 +201,7 @@ def generate_Cpp_code(list_config_params):
 
     # // INCLUDE_GET_READY_OUTPUT_CHAR_REPR
     old_string = "// INCLUDE_GET_READY_OUTPUT_CHAR_REPR"
-    new_string = generate_string(list_config_params, generate_INCLUDE_GET_READY_OUTPUT_CHAR_REPR)
+    new_string = generate_INCLUDE_GET_READY_OUTPUT_CHAR_REPR(total_number_parameters)
     inplace_change(filename_cpp, old_string, new_string)
 
     # // INCLUDE_GET_OUTPUT_LINE

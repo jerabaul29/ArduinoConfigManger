@@ -57,7 +57,7 @@ int CONFIG_MANAGER::read_next_building_char(char crrt_char){
 
 int CONFIG_MANAGER::update_field(String crrt_name, String crrt_value){
 
-  // INCLUDE_UPDATE_FIELD
+// INCLUDE_UPDATE_FIELD
 
 
   #if USE_CONFIG_MANAGER_EXAMPLES
@@ -78,7 +78,7 @@ int CONFIG_MANAGER::update_field(String crrt_name, String crrt_value){
 ////////////////////////////////////////////////////////////////////////////////
 
 void CONFIG_MANAGER::get_ready_output_char_representation(void){
-  // INCLUDE_GET_READY_OUTPUT_CHAR_REPR
+// INCLUDE_GET_READY_OUTPUT_CHAR_REPR
 
   #if USE_CONFIG_MANAGER_EXAMPLES
     number_remaining_parameters = 1;
@@ -127,7 +127,7 @@ char CONFIG_MANAGER::next_output_char(void){
 };
 
 void CONFIG_MANAGER::get_output_line_ready(void){
-  // INCLUDE_GET_OUTPUT_LINE
+// INCLUDE_GET_OUTPUT_LINE
 
   #if USE_CONFIG_MANAGER_EXAMPLES
 
