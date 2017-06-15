@@ -155,10 +155,22 @@ def generate_Cpp_code(list_config_params):
 
 generate_Cpp_code(None)
 
-example_config_param_inst = config_param(var_name="test_var", type="String", init='"xx"')
-print(generate_INCLUDE_GET_SET_FUNCTIONS_H(example_config_param_inst))
-print(generate_INCLUDE_CONFIG_VARIABLES_H(example_config_param_inst))
-print(generate_INCLUDE_GET_SET_FUNCTIONS(example_config_param_inst))
-print(generate_INCLUDE_UPDATE_FIELD(example_config_param_inst))
-print(generate_INCLUDE_GET_OUTPUT_LINE(example_config_param_inst, 1))
+example_config_param_inst1 = config_param(var_name="test_var1", type="String", init='"xx"')
+example_config_param_inst2 = config_param(var_name="test_var2", type="int", init='3')
+
+print(generate_INCLUDE_GET_SET_FUNCTIONS_H(example_config_param_inst1))
+print(generate_INCLUDE_GET_SET_FUNCTIONS_H(example_config_param_inst2))
+
+print(generate_INCLUDE_CONFIG_VARIABLES_H(example_config_param_inst1))
+print(generate_INCLUDE_CONFIG_VARIABLES_H(example_config_param_inst2))
+
+print(generate_INCLUDE_GET_SET_FUNCTIONS(example_config_param_inst1))
+print(generate_INCLUDE_GET_SET_FUNCTIONS(example_config_param_inst2))
+
+print(generate_INCLUDE_UPDATE_FIELD(example_config_param_inst1))
+print(generate_INCLUDE_UPDATE_FIELD(example_config_param_inst2))
+
+print(generate_INCLUDE_GET_OUTPUT_LINE(example_config_param_inst1, 1))
+print(generate_INCLUDE_GET_OUTPUT_LINE(example_config_param_inst2, 2))
+
 print(generate_INCLUDE_GET_READY_OUTPUT_CHAR_REPR(3))
