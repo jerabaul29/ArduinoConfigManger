@@ -115,7 +115,7 @@ def generate_INCLUDE_GET_SET_FUNCTIONS(config_param_inst):
         return(nbr_index);
     }
 
-    void CONFIG_MANAGER::set_nbr_index(int int_in){
+    void CONFIG_MANAGER::set_nbr_index(int val_in){
       nbr_index = int_in;
     }
 
@@ -137,6 +137,9 @@ def generate_INCLUDE_GET_SET_FUNCTIONS(config_param_inst):
 
     elif config_param_inst.type == 'String':
         def_4 = "void CONFIG_MANAGER::setS_" + config_param_inst.var_name + "(String string_in){\n" + config_param_inst.var_name + " = string_in;\n}\n"
+
+    elif config_param_inst.type == 'bool':
+        def_4 = "void CONFIG_MANAGER::setS_" + config_param_inst.var_name + "(String string_in){\n" + config_param_inst.var_name + ' = ((string_in == "true") || (string_in == "0"));\n}\n'
 
     return def_1 + def_2 + def_3 + def_4
 

@@ -85,6 +85,14 @@ if (crrt_name == "test_var6"){
 CONFIG_MANAGER::setS_test_var6(crrt_value);
 }
 
+if (crrt_name == "test_var9"){
+CONFIG_MANAGER::setS_test_var9(crrt_value);
+}
+
+if (crrt_name == "test_var8"){
+CONFIG_MANAGER::setS_test_var8(crrt_value);
+}
+
 
 
 
@@ -106,7 +114,7 @@ CONFIG_MANAGER::setS_test_var6(crrt_value);
 ////////////////////////////////////////////////////////////////////////////////
 
 void CONFIG_MANAGER::get_ready_output_char_representation(void){
-number_remaining_parameters = 7;
+number_remaining_parameters = 9;
 
   #if USE_CONFIG_MANAGER_EXAMPLES
     number_remaining_parameters = 1;
@@ -186,6 +194,16 @@ if (number_remaining_parameters == 6){
 }
 if (number_remaining_parameters == 7){
   output_string = String("[") + String("test_var6") + String("=") + CONFIG_MANAGER::getS_test_var6() + String("]");
+  crrt_length_output_string = output_string.length();
+  crrt_index_output_string = 0;
+}
+if (number_remaining_parameters == 8){
+  output_string = String("[") + String("test_var9") + String("=") + CONFIG_MANAGER::getS_test_var9() + String("]");
+  crrt_length_output_string = output_string.length();
+  crrt_index_output_string = 0;
+}
+if (number_remaining_parameters == 9){
+  output_string = String("[") + String("test_var8") + String("=") + CONFIG_MANAGER::getS_test_var8() + String("]");
   crrt_length_output_string = output_string.length();
   crrt_index_output_string = 0;
 }
@@ -302,6 +320,32 @@ return(String(test_var6));
 }
 void CONFIG_MANAGER::setS_test_var6(String string_in){
 test_var6 = string_in;
+}
+
+bool CONFIG_MANAGER::get_test_var9(){
+return(test_var9);
+}
+void CONFIG_MANAGER::set_test_var9(bool val_in){
+test_var9 = val_in;
+}
+String CONFIG_MANAGER::getS_test_var9(){
+return(String(test_var9));
+}
+void CONFIG_MANAGER::setS_test_var9(String string_in){
+test_var9 = ((string_in == "true") || (string_in == "0"));
+}
+
+bool CONFIG_MANAGER::get_test_var8(){
+return(test_var8);
+}
+void CONFIG_MANAGER::set_test_var8(bool val_in){
+test_var8 = val_in;
+}
+String CONFIG_MANAGER::getS_test_var8(){
+return(String(test_var8));
+}
+void CONFIG_MANAGER::setS_test_var8(String string_in){
+test_var8 = ((string_in == "true") || (string_in == "0"));
 }
 
 

@@ -7,6 +7,8 @@
 
 Asking output: 
 
+[test_var8=0]
+[test_var9=1]
 [test_var6=x5]
 [test_var7=x6]
 [test_var4=x3]
@@ -21,7 +23,7 @@ test_var2 (as native type and String):
 3
 3
 
-Update parameters var1 (rho) and var2 (5)... 
+Update parameters var1 (rho) and var2 (5) and var8 (true)... 
 
 After updated internal state: 
 
@@ -31,13 +33,19 @@ rho
 test_var2: 
 5
 5
+test_var8: 
+1
+1
 
 Read input message: 
 
 [test_var4=bla]
 [test_var2=10]
+[test_var9=false]
 Asking output: 
 
+[test_var8=1]
+[test_var9=0]
 [test_var6=x5]
 [test_var7=x6]
 [test_var4=bla]
@@ -52,7 +60,7 @@ Asking output:
 #define USE_CONFIG_MANAGER_EXAMPLES true
 #include "ConfigManager.h"
 
-String STRING_IN = "[test_var4=bla]\n[test_var2=10]";
+String STRING_IN = "[test_var4=bla]\n[test_var2=10]\n[test_var9=false]";
 
 int STRING_LT = STRING_IN.length();
 
@@ -81,13 +89,16 @@ void setup(){
   Serial.print(CONFIG_MANAGER_inst.getS_test_var2());
   Serial.println();
 
-  Serial.println(F("\nUpdate parameters var1 (rho) and var2 (5)... \n"));
+  Serial.println(F("\nUpdate parameters var1 (rho) and var2 (5) and var8 (true)... \n"));
 
   String settingName = "test_var1";
   String settingValue = "rho";
   CONFIG_MANAGER_inst.update_field(settingName, settingValue);
   settingName = "test_var2";
   settingValue = "5";
+  CONFIG_MANAGER_inst.update_field(settingName, settingValue);
+  settingName = "test_var8";
+  settingValue = "true";
   CONFIG_MANAGER_inst.update_field(settingName, settingValue);
 
   Serial.println(F("After updated internal state: \n"));
@@ -101,6 +112,11 @@ void setup(){
   Serial.print(CONFIG_MANAGER_inst.get_test_var2());
   Serial.println();
   Serial.print(CONFIG_MANAGER_inst.getS_test_var2());
+  Serial.println();
+  Serial.println(F("test_var8: "));
+  Serial.print(CONFIG_MANAGER_inst.get_test_var8());
+  Serial.println();
+  Serial.print(CONFIG_MANAGER_inst.getS_test_var8());
   Serial.println();
 
   Serial.println(F("\nRead input message: \n"));
