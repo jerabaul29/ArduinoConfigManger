@@ -171,7 +171,7 @@ def generate_Cpp_code(list_config_params):
     for root, dir_name, file_names in os.walk(pathGenerated):
         for file_name in file_names:
             if not (fnmatch.fnmatch(file_name, "*.cpp") or fnmatch.fnmatch(file_name, "*.h")):
-                print("non conforming file: " + root + file_name)
+                # print("non conforming file: " + root + file_name)
                 os.remove(root + file_name)
 
     # total number of parameters -----
