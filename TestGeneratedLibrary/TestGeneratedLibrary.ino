@@ -1,11 +1,11 @@
 /*
- * 
+ *
  * Illustration of the use of the ConfigManager library.
  * Tested successfully on Arduino Mega.
- * 
+ *
  * Produces following serial output:
 
-Asking output: 
+Asking output:
 
 [test_var9=1]
 [test_var8=0]
@@ -17,32 +17,32 @@ Asking output:
 [test_var2=3]
 [test_var1=xx]
 
-Get one single parameter: 
+Get one single parameter:
 
-test_var2 (as native type and String): 
+test_var2 (as native type and String):
 3
 3
 
-Update parameters var1 (rho) and var2 (5) and var8 (true)... 
+Update parameters var1 (rho) and var2 (5) and var8 (true)...
 
-After updated internal state: 
+After updated internal state:
 
-test_var1: 
+test_var1:
 rho
 rho
-test_var2: 
+test_var2:
 5
 5
-test_var8: 
+test_var8:
 1
 1
 
-Read input message: 
+Read input message:
 
 [test_var4=bla]
 [test_var2=10]
 [test_var9=false]
-Asking output: 
+Asking output:
 
 [test_var9=0]
 [test_var8=1]
@@ -54,10 +54,9 @@ Asking output:
 [test_var2=10]
 [test_var1=rho]
 
- * 
+ *
  */
 
-#define USE_CONFIG_MANAGER_EXAMPLES true
 #include "ConfigManager.h"
 
 String STRING_IN = "[test_var4=bla]\n[test_var2=10]\n[test_var9=false]";
@@ -66,13 +65,13 @@ int STRING_LT = STRING_IN.length();
 
 char crrt_char;
 
+CONFIG_MANAGER CONFIG_MANAGER_inst;
+
 
 void setup(){
   delay(500);
 
   Serial.begin(9600);
-
-  CONFIG_MANAGER CONFIG_MANAGER_inst;
 
   Serial.println(F("\nAsking output: \n"));
   CONFIG_MANAGER_inst.get_ready_output_char_representation();
@@ -135,7 +134,7 @@ void setup(){
     crrt_char = CONFIG_MANAGER_inst.next_output_char();
     Serial.print(crrt_char);
   }
-  
+
 }
 
 void loop(){
