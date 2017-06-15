@@ -7,14 +7,14 @@
 
 Asking output: 
 
-[test_var8=0]
 [test_var9=1]
-[test_var6=x5]
+[test_var8=0]
 [test_var7=x6]
-[test_var4=x3]
+[test_var6=x5]
 [test_var5=x4]
-[test_var2=3]
+[test_var4=x3]
 [test_var3=x2]
+[test_var2=3]
 [test_var1=xx]
 
 Get one single parameter: 
@@ -44,14 +44,14 @@ Read input message:
 [test_var9=false]
 Asking output: 
 
-[test_var8=1]
 [test_var9=0]
-[test_var6=x5]
+[test_var8=1]
 [test_var7=x6]
-[test_var4=bla]
+[test_var6=x5]
 [test_var5=x4]
-[test_var2=10]
+[test_var4=bla]
 [test_var3=x2]
+[test_var2=10]
 [test_var1=rho]
 
  * 

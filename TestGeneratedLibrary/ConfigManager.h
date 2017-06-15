@@ -49,45 +49,45 @@ void set_test_var1(String);
 String getS_test_var1(void);
 void setS_test_var1(String);
 
-String get_test_var3(void);
-void set_test_var3(String);
-String getS_test_var3(void);
-void setS_test_var3(String);
-
 int get_test_var2(void);
 void set_test_var2(int);
 String getS_test_var2(void);
 void setS_test_var2(String);
 
-String get_test_var5(void);
-void set_test_var5(String);
-String getS_test_var5(void);
-void setS_test_var5(String);
+String get_test_var3(void);
+void set_test_var3(String);
+String getS_test_var3(void);
+void setS_test_var3(String);
 
 String get_test_var4(void);
 void set_test_var4(String);
 String getS_test_var4(void);
 void setS_test_var4(String);
 
-String get_test_var7(void);
-void set_test_var7(String);
-String getS_test_var7(void);
-void setS_test_var7(String);
+String get_test_var5(void);
+void set_test_var5(String);
+String getS_test_var5(void);
+void setS_test_var5(String);
 
 String get_test_var6(void);
 void set_test_var6(String);
 String getS_test_var6(void);
 void setS_test_var6(String);
 
-bool get_test_var9(void);
-void set_test_var9(bool);
-String getS_test_var9(void);
-void setS_test_var9(String);
+String get_test_var7(void);
+void set_test_var7(String);
+String getS_test_var7(void);
+void setS_test_var7(String);
 
 bool get_test_var8(void);
 void set_test_var8(bool);
 String getS_test_var8(void);
 void setS_test_var8(String);
+
+bool get_test_var9(void);
+void set_test_var9(bool);
+String getS_test_var9(void);
+void setS_test_var9(String);
 
 
 
@@ -137,14 +137,14 @@ private:
   // -------------------------------------------------------------------------
 
 String test_var1 = "xx";
-String test_var3 = "x2";
 int test_var2 = 3;
-String test_var5 = "x4";
+String test_var3 = "x2";
 String test_var4 = "x3";
-String test_var7 = "x6";
+String test_var5 = "x4";
 String test_var6 = "x5";
-bool test_var9 = true;
+String test_var7 = "x6";
 bool test_var8 = false;
+bool test_var9 = true;
 
 
   #if USE_CONFIG_MANAGER_EXAMPLES

@@ -220,7 +220,7 @@ def generate_Cpp_code(list_config_params):
 
 def generate_list_params_from_dict(dict_all_params):
     list_all_params = []
-    for crrt_param in dict_all_params.itervalues():
-        list_all_params.append(crrt_param)
+    for crrt_param_key in sorted(dict_all_params):
+        list_all_params.append(dict_all_params[crrt_param_key])
 
     return(list_all_params)

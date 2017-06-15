@@ -61,36 +61,36 @@ if (crrt_name == "test_var1"){
 CONFIG_MANAGER::setS_test_var1(crrt_value);
 }
 
-if (crrt_name == "test_var3"){
-CONFIG_MANAGER::setS_test_var3(crrt_value);
-}
-
 if (crrt_name == "test_var2"){
 CONFIG_MANAGER::setS_test_var2(crrt_value);
 }
 
-if (crrt_name == "test_var5"){
-CONFIG_MANAGER::setS_test_var5(crrt_value);
+if (crrt_name == "test_var3"){
+CONFIG_MANAGER::setS_test_var3(crrt_value);
 }
 
 if (crrt_name == "test_var4"){
 CONFIG_MANAGER::setS_test_var4(crrt_value);
 }
 
-if (crrt_name == "test_var7"){
-CONFIG_MANAGER::setS_test_var7(crrt_value);
+if (crrt_name == "test_var5"){
+CONFIG_MANAGER::setS_test_var5(crrt_value);
 }
 
 if (crrt_name == "test_var6"){
 CONFIG_MANAGER::setS_test_var6(crrt_value);
 }
 
-if (crrt_name == "test_var9"){
-CONFIG_MANAGER::setS_test_var9(crrt_value);
+if (crrt_name == "test_var7"){
+CONFIG_MANAGER::setS_test_var7(crrt_value);
 }
 
 if (crrt_name == "test_var8"){
 CONFIG_MANAGER::setS_test_var8(crrt_value);
+}
+
+if (crrt_name == "test_var9"){
+CONFIG_MANAGER::setS_test_var9(crrt_value);
 }
 
 
@@ -168,42 +168,42 @@ if (number_remaining_parameters == 1){
   crrt_index_output_string = 0;
 }
 if (number_remaining_parameters == 2){
-  output_string = String("[") + String("test_var3") + String("=") + CONFIG_MANAGER::getS_test_var3() + String("]");
-  crrt_length_output_string = output_string.length();
-  crrt_index_output_string = 0;
-}
-if (number_remaining_parameters == 3){
   output_string = String("[") + String("test_var2") + String("=") + CONFIG_MANAGER::getS_test_var2() + String("]");
   crrt_length_output_string = output_string.length();
   crrt_index_output_string = 0;
 }
-if (number_remaining_parameters == 4){
-  output_string = String("[") + String("test_var5") + String("=") + CONFIG_MANAGER::getS_test_var5() + String("]");
+if (number_remaining_parameters == 3){
+  output_string = String("[") + String("test_var3") + String("=") + CONFIG_MANAGER::getS_test_var3() + String("]");
   crrt_length_output_string = output_string.length();
   crrt_index_output_string = 0;
 }
-if (number_remaining_parameters == 5){
+if (number_remaining_parameters == 4){
   output_string = String("[") + String("test_var4") + String("=") + CONFIG_MANAGER::getS_test_var4() + String("]");
   crrt_length_output_string = output_string.length();
   crrt_index_output_string = 0;
 }
-if (number_remaining_parameters == 6){
-  output_string = String("[") + String("test_var7") + String("=") + CONFIG_MANAGER::getS_test_var7() + String("]");
+if (number_remaining_parameters == 5){
+  output_string = String("[") + String("test_var5") + String("=") + CONFIG_MANAGER::getS_test_var5() + String("]");
   crrt_length_output_string = output_string.length();
   crrt_index_output_string = 0;
 }
-if (number_remaining_parameters == 7){
+if (number_remaining_parameters == 6){
   output_string = String("[") + String("test_var6") + String("=") + CONFIG_MANAGER::getS_test_var6() + String("]");
   crrt_length_output_string = output_string.length();
   crrt_index_output_string = 0;
 }
+if (number_remaining_parameters == 7){
+  output_string = String("[") + String("test_var7") + String("=") + CONFIG_MANAGER::getS_test_var7() + String("]");
+  crrt_length_output_string = output_string.length();
+  crrt_index_output_string = 0;
+}
 if (number_remaining_parameters == 8){
-  output_string = String("[") + String("test_var9") + String("=") + CONFIG_MANAGER::getS_test_var9() + String("]");
+  output_string = String("[") + String("test_var8") + String("=") + CONFIG_MANAGER::getS_test_var8() + String("]");
   crrt_length_output_string = output_string.length();
   crrt_index_output_string = 0;
 }
 if (number_remaining_parameters == 9){
-  output_string = String("[") + String("test_var8") + String("=") + CONFIG_MANAGER::getS_test_var8() + String("]");
+  output_string = String("[") + String("test_var9") + String("=") + CONFIG_MANAGER::getS_test_var9() + String("]");
   crrt_length_output_string = output_string.length();
   crrt_index_output_string = 0;
 }
@@ -244,19 +244,6 @@ void CONFIG_MANAGER::setS_test_var1(String string_in){
 test_var1 = string_in;
 }
 
-String CONFIG_MANAGER::get_test_var3(){
-return(test_var3);
-}
-void CONFIG_MANAGER::set_test_var3(String val_in){
-test_var3 = val_in;
-}
-String CONFIG_MANAGER::getS_test_var3(){
-return(String(test_var3));
-}
-void CONFIG_MANAGER::setS_test_var3(String string_in){
-test_var3 = string_in;
-}
-
 int CONFIG_MANAGER::get_test_var2(){
 return(test_var2);
 }
@@ -270,17 +257,17 @@ void CONFIG_MANAGER::setS_test_var2(String string_in){
 test_var2 = string_in.toInt();
 }
 
-String CONFIG_MANAGER::get_test_var5(){
-return(test_var5);
+String CONFIG_MANAGER::get_test_var3(){
+return(test_var3);
 }
-void CONFIG_MANAGER::set_test_var5(String val_in){
-test_var5 = val_in;
+void CONFIG_MANAGER::set_test_var3(String val_in){
+test_var3 = val_in;
 }
-String CONFIG_MANAGER::getS_test_var5(){
-return(String(test_var5));
+String CONFIG_MANAGER::getS_test_var3(){
+return(String(test_var3));
 }
-void CONFIG_MANAGER::setS_test_var5(String string_in){
-test_var5 = string_in;
+void CONFIG_MANAGER::setS_test_var3(String string_in){
+test_var3 = string_in;
 }
 
 String CONFIG_MANAGER::get_test_var4(){
@@ -296,17 +283,17 @@ void CONFIG_MANAGER::setS_test_var4(String string_in){
 test_var4 = string_in;
 }
 
-String CONFIG_MANAGER::get_test_var7(){
-return(test_var7);
+String CONFIG_MANAGER::get_test_var5(){
+return(test_var5);
 }
-void CONFIG_MANAGER::set_test_var7(String val_in){
-test_var7 = val_in;
+void CONFIG_MANAGER::set_test_var5(String val_in){
+test_var5 = val_in;
 }
-String CONFIG_MANAGER::getS_test_var7(){
-return(String(test_var7));
+String CONFIG_MANAGER::getS_test_var5(){
+return(String(test_var5));
 }
-void CONFIG_MANAGER::setS_test_var7(String string_in){
-test_var7 = string_in;
+void CONFIG_MANAGER::setS_test_var5(String string_in){
+test_var5 = string_in;
 }
 
 String CONFIG_MANAGER::get_test_var6(){
@@ -322,17 +309,17 @@ void CONFIG_MANAGER::setS_test_var6(String string_in){
 test_var6 = string_in;
 }
 
-bool CONFIG_MANAGER::get_test_var9(){
-return(test_var9);
+String CONFIG_MANAGER::get_test_var7(){
+return(test_var7);
 }
-void CONFIG_MANAGER::set_test_var9(bool val_in){
-test_var9 = val_in;
+void CONFIG_MANAGER::set_test_var7(String val_in){
+test_var7 = val_in;
 }
-String CONFIG_MANAGER::getS_test_var9(){
-return(String(test_var9));
+String CONFIG_MANAGER::getS_test_var7(){
+return(String(test_var7));
 }
-void CONFIG_MANAGER::setS_test_var9(String string_in){
-test_var9 = ((string_in == "true") || (string_in == "0"));
+void CONFIG_MANAGER::setS_test_var7(String string_in){
+test_var7 = string_in;
 }
 
 bool CONFIG_MANAGER::get_test_var8(){
@@ -346,6 +333,19 @@ return(String(test_var8));
 }
 void CONFIG_MANAGER::setS_test_var8(String string_in){
 test_var8 = ((string_in == "true") || (string_in == "0"));
+}
+
+bool CONFIG_MANAGER::get_test_var9(){
+return(test_var9);
+}
+void CONFIG_MANAGER::set_test_var9(bool val_in){
+test_var9 = val_in;
+}
+String CONFIG_MANAGER::getS_test_var9(){
+return(String(test_var9));
+}
+void CONFIG_MANAGER::setS_test_var9(String string_in){
+test_var9 = ((string_in == "true") || (string_in == "0"));
 }
 
 
