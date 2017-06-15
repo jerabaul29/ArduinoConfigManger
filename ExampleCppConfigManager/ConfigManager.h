@@ -1,13 +1,10 @@
 #ifndef CONFIG_MANAGER_h
 #define CONFIG_MANAGER_h
 
+// to be substituted if necessary to false
 #define USE_CONFIG_MANAGER_EXAMPLES true
 
 #include <WString.h>
-
-// NOTE: use char[] instead of string to allow compatibility on Arduino sketches
-// #include <string>
-// using namespace std;
 
 class CONFIG_MANAGER{
 
