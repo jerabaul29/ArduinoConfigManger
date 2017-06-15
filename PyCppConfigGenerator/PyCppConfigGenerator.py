@@ -2,6 +2,7 @@ from __future__ import print_function
 import shutil
 import os
 import collections
+import fnmatch
 
 
 def inplace_change(filename, old_string, new_string):
@@ -130,13 +131,29 @@ def generate_INCLUDE_GET_SET_FUNCTIONS(config_param_inst):
 
 
 def generate_Cpp_code(list_config_params):
-    # copy into output directory
+    pathToSource = '../ExampleCppConfigManager/'
+    pathGenerated = '../GeneratedConfigManager/'
+
+    if os.path.exists(pathGenerated):
+        shutil.rmtree(pathGenerated)
+
+    shutil.copytree(pathToSource, pathGenerated)
+
+    for root, dir_name, file_names in os.walk(pathGenerated):
+        for file_name in file_names:
+            if not (fnmatch.fnmatch(file_name, "*.cpp") or fnmatch.fnmatch(file_name, "*.h")):
+                print("non conforming file: " + root + file_name)
+                os.remove(root + file_name)
 
     # total number of parameters
+    total_number_parameters = len(list_config_params)
 
     # perform all substitutions
-    pass
 
+    # each of the six, each of the parameters
+
+
+generate_Cpp_code(None)
 
 example_config_param_inst = config_param(var_name="test_var", type="String", init='"xx"')
 print(generate_INCLUDE_GET_SET_FUNCTIONS_H(example_config_param_inst))
